@@ -1,21 +1,14 @@
 from app.interfaces.repositories.user_repository import UserRepository
-from app.domain.models import User
+from app.domain.models import User as DomainUser
 
 
 class UserRepositoryImpl(UserRepository):
+
     def __init__(self, db):
         self.db = db
 
-    def create_user(self, user: User) -> User:
+    def create_user(self, user: User) -> DomainUser:
         pass
 
-    def get_user(self, user_id: int) -> User:
-        return User(
-            id=user_id,
-            username="test",
-            password="test",
-            email="test",
-            full_name="test",
-            role_id=1,
-            is_active=True,
-        )
+    async def get_user(self, user_id: str) -> DomainUser:
+        pass

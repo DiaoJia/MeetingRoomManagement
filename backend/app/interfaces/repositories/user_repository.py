@@ -5,7 +5,7 @@ from app.domain.models import User
 
 class UserRepository(ABC):
     @abstractmethod
-    def get_user(self, user_id: int) -> User:
+    def get_user(self, user_id: str) -> User:
         pass
 
     @abstractmethod

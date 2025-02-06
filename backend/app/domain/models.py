@@ -1,18 +1,19 @@
-from pydantic import BaseModel
+from pydantic import BaseModel, EmailStr
+from typing import Optional
 
 
 class User(BaseModel):
-    id: int
+    id: str
     username: str
     password: str
-    email: str
+    email: EmailStr
     full_name: str
     role_id: int
     is_active: bool = True
 
 
 class Role(BaseModel):
-    id: int
+    id: str
     code: int
     name: str
-    description: str
+    description: Optional[str] = None
