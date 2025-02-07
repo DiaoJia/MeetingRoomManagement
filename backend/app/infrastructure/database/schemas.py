@@ -19,7 +19,7 @@ class PyObjectId(ObjectId):
         field_schema.update(type="string")
 
 
-class UserScheam(BaseModel):
+class UserSchema(BaseModel):
     id: Optional[PyObjectId] = Field(alias="_id", default=None)
     username: str = Field(..., min_length=2, max_length=100)
     password: str = Field(...)

@@ -2,7 +2,7 @@ from pydantic import BaseModel, EmailStr
 from typing import Optional
 
 
-class User(BaseModel):
+class UserModel(BaseModel):
     id: str
     username: str
     password: str
@@ -12,7 +12,7 @@ class User(BaseModel):
     is_active: bool = True
 
 
-class Role(BaseModel):
+class RoleModel(BaseModel):
     id: str
     code: int
     name: str
