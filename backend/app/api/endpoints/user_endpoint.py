@@ -2,9 +2,11 @@ from fastapi import APIRouter, HTTPException
 from app.application.services.user_service import UserService
 from app.infrastructure.repositories.user_repository_impl import UserRepositoryImpl
 from app.domain.models import UserModel
+from app.infrastructure.database import config
 
 router = APIRouter()
-user_service = UserService(UserRepositoryImpl())
+user_repository = UserRepositoryImpl(config.db)
+user_service = UserService(user_repository)
 
 
 @router.get("/users/{user_id}", response_model=UserModel)

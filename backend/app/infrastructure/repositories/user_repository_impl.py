@@ -8,7 +8,7 @@ class UserRepositoryImpl(UserRepository):
 
     def __init__(self, db):
         self.db = db
-        self.user_collection = self.db["users"]
+        self.user_collection = db["users"]
 
     async def get_user_by_id(self, user_id: str) -> Optional[UserSchema]:
         user = await self.user_collection.find_one({"_id": ObjectId(user_id)})

@@ -1,4 +1,4 @@
-from pydantic import BaseModel, EmailStr
+from pydantic import BaseModel
 from typing import Optional
 
 
@@ -6,7 +6,7 @@ class UserModel(BaseModel):
     id: str
     username: str
     password: str
-    email: EmailStr
+    email: str
     full_name: str
     role_id: int
     is_active: bool = True

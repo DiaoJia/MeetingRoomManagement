@@ -8,3 +8,11 @@ pip install --upgrade package_name && pip freeze > requirements.txt
 升级某个包并更新 requirements.txt
 pip uninstall -r requirements.txt -y && pip install -r requirements.txt && pip freeze > requirements.txt
 删除无用的包
+
+运行应用
+uvicorn app.main:app --reload
+
+Swagger UI
+http://127.0.0.1:8000/docs
+Redoc
+http://127.0.0.1:8000/redoc
