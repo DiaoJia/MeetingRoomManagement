@@ -31,5 +31,5 @@ class UserRepositoryImpl(UserRepository):
         return result.deleted_count > 0
 
     async def get_users(self) -> list[UserSchema]:
-        users = self.user_collection.find().to_list(100)
+        users = await self.user_collection.find().to_list(100)
         return [UserSchema(**user) for user in users]
