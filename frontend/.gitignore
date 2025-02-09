@@ -1,0 +1,32 @@
+# Node modules
+/node_modules/
+
+# Build output
+/.next/
+/out/
+
+# TypeScript cache
+/.turbo/
+/tsconfig.tsbuildinfo
+
+# Log files
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Next.js environment variable files
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# OS specific files
+.DS_Store
+Thumbs.db
+
+# IDE and editor specific files
+.vscode/
+.idea/
+
+# Optional .env files
+.env
