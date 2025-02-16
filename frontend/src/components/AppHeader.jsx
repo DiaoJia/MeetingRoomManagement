@@ -4,7 +4,7 @@ import NotificationsIcon from '@mui/icons-material/Notifications';
 import SettingsIcon from '@mui/icons-material/Settings';
 import LogoutIcon from '@mui/icons-material/Logout';
 
-function AppHeader({handleCollapsed}) {
+function AppHeader({ handleCollapsed }) {
     return (
         <AppBar position="sticky" sx={styles.appBar}>
             <Toolbar>
@@ -12,10 +12,9 @@ function AppHeader({handleCollapsed}) {
                     <MenuTwoToneIcon />
                 </IconButton>
                 <Box
-                    component={'img'}
-                    sx={styles.appLogo}
-                    src="/src/assets/logo.jpg"
-                ></Box>
+                    sx={styles.title}>
+                    Meeting Room Management
+                </Box>
                 <Box sx={{ flexGrow: 1 }} />
                 <IconButton onClick={() => console.log('Clicked')} color="secondary">
                     <Badge badgeContent={4} color="error">
@@ -38,10 +37,9 @@ const styles = {
     appBar: {
         bgcolor: 'neutral.main',
     },
-    appLogo: {
-        borderRadius: 2,
-        width: 80,
-        ml: 2,
+    title: {
+        ml:2,
+        fontSize: 20,
         cursor: 'pointer',
     }
 };
