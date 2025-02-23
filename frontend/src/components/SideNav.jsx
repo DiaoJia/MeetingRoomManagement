@@ -3,6 +3,7 @@ import { Menu, MenuItem, Sidebar } from 'react-pro-sidebar'
 import DashboardOutlinedIcon from '@mui/icons-material/DashboardOutlined';
 import PeopleAltOutlinedIcon from '@mui/icons-material/PeopleAltOutlined';
 import GroupsOutlinedIcon from '@mui/icons-material/GroupsOutlined';
+import AddBusinessOutlinedIcon from '@mui/icons-material/AddBusinessOutlined';
 import { Link, useLocation } from "react-router";
 
 function SideNav({ collapsed }) {
@@ -29,11 +30,14 @@ function SideNav({ collapsed }) {
             <MenuItem active={location.pathname === '/'} component={<Link to="/" />} icon={<DashboardOutlinedIcon />}>
                 <Typography variant="body2">Dashboard</Typography>
             </MenuItem>
-            <MenuItem active={location.pathname === '/users'} component={<Link to="/user" />} icon={<PeopleAltOutlinedIcon />}>
+            <MenuItem active={location.pathname === '/users'} component={<Link to="/users" />} icon={<PeopleAltOutlinedIcon />}>
                 <Typography variant="body2">Users</Typography>
             </MenuItem>
-            <MenuItem active={location.pathname === '/meetings'} component={<Link to="/meeting" />} icon={<GroupsOutlinedIcon />}>
-                <Typography variant="body2">Meetings</Typography>
+            <MenuItem active={location.pathname === '/rooms'} component={<Link to="/rooms" />} icon={<GroupsOutlinedIcon />}>
+                <Typography variant="body2">Meeting rooms</Typography>
+            </MenuItem>      
+            <MenuItem active={location.pathname === '/booking'} component={<Link to="/booking" />} icon={<AddBusinessOutlinedIcon />}>
+                <Typography variant="body2">Booking room</Typography>
             </MenuItem>           
         </Menu>
     </Sidebar>);
