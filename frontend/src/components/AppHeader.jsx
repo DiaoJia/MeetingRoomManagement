@@ -3,8 +3,14 @@ import MenuTwoToneIcon from '@mui/icons-material/MenuTwoTone';
 import NotificationsIcon from '@mui/icons-material/Notifications';
 import SettingsIcon from '@mui/icons-material/Settings';
 import LogoutIcon from '@mui/icons-material/Logout';
+import { useAuth } from "../context/AuthContext";
 
 function AppHeader({ handleCollapsed }) {
+    const { logout } = useAuth();
+    const HandleLogout = () => {
+        logout();
+    };
+
     return (
         <AppBar position="sticky" sx={styles.appBar}>
             <Toolbar>
@@ -24,7 +30,7 @@ function AppHeader({ handleCollapsed }) {
                 <IconButton onClick={() => console.log('Clicked')} color="secondary">
                     <SettingsIcon />
                 </IconButton>
-                <IconButton onClick={() => console.log('Clicked')} color="secondary">
+                <IconButton onClick={HandleLogout} color="secondary">
                     <LogoutIcon />
                 </IconButton>
             </Toolbar>
@@ -38,7 +44,7 @@ const styles = {
         bgcolor: 'neutral.main',
     },
     title: {
-        ml:2,
+        ml: 2,
         fontSize: 20,
         cursor: 'pointer',
     }

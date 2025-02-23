@@ -1,7 +1,6 @@
-import { Box, Typography, useTheme } from "@mui/material";
+import { Typography, useTheme } from "@mui/material";
 import { Menu, MenuItem, Sidebar } from 'react-pro-sidebar'
 import DashboardOutlinedIcon from '@mui/icons-material/DashboardOutlined';
-import SegmentOutlinedIcon from '@mui/icons-material/SegmentOutlined';
 import PeopleAltOutlinedIcon from '@mui/icons-material/PeopleAltOutlined';
 import GroupsOutlinedIcon from '@mui/icons-material/GroupsOutlined';
 import { Link, useLocation } from "react-router";

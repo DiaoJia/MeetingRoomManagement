@@ -3,4 +3,4 @@ Backend:
 
 
 Frontend:
-1.
+1.npm run dev
