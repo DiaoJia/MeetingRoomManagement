@@ -27,7 +27,7 @@ function AddMeetingRoom() {
 
     return (
         <Box>
-            <Typography variant="h4" sx={styles.title}>Create User</Typography>
+            <Typography variant="h4" sx={styles.title}>Add Meeting Room</Typography>
             <Formik
                 onSubmit={handleFormSubmit}
                 initialValues={initialValues}
