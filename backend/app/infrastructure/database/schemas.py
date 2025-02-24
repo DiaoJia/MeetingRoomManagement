@@ -1,7 +1,7 @@
 from pydantic import BaseModel, Field
 from typing import Optional
 from bson import ObjectId
-
+from datetime import datetime
 
 # class PyObjectId(ObjectId):
 #     @classmethod
@@ -33,9 +33,12 @@ class UserSchema(BaseModel):
     username: str = Field(..., min_length=2, max_length=100)
     password: str = Field(...)
     email: str = Field(...)
-    full_name: str = Field(...)
-    role_id: int = Field(...)
-    is_active: bool = Field(default=True)
+    first_name: str = Field(...)
+    last_name: str = Field(...)
+    role_code: int = Field(...)
+    active: bool = Field(default=True)
+    created_at: datetime = Field(...)
+    updated_at: Optional[datetime] = Field(...)
 
     class Config:
         arbitrary_types_allowed = True
@@ -47,6 +50,7 @@ class RoleSchema(BaseModel):
     id: Optional[PyObjectId] = Field(alias="_id", default=None)
     code: int = Field(...)
     name: str = Field(...)
+    active: bool = Field(default=True)
     description: Optional[str] = Field(...)
 
     class Config:
