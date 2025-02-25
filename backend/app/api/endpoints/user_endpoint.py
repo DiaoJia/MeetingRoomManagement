@@ -2,7 +2,7 @@ from fastapi import APIRouter, HTTPException
 from app.application.services.user_service import UserService
 from app.infrastructure.repositories.user_repository_impl import UserRepositoryImpl
 from app.domain.models import UserModel
-from main import db
+from app.infrastructure.database.db import db
 from app.application.log.logger import logger
 
 router = APIRouter()

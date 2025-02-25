@@ -1,10 +1,10 @@
-class InitSeedData:
+class SeedData:
     def __init__(self, db):
         self.db = db
         self.user_collection = db["users"]
         self.role_collection = db["roles"]
 
-    async def init_seed_data(self):
+    async def seed_data(self):
         print("Seeding user data...")
         roles = [
             {
