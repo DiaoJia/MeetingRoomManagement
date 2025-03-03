@@ -15,10 +15,10 @@ function AppRoutes() {
     const { isAuthenticated } = useAuth();
     return (
         <Routes>
-            <Route path="/login" element={<AuthLayout />}>
+            <Route element={<AuthLayout />}>
                 <Route path="/login" element={<Login />} />
             </Route>
-            <Route path="/" element={<MainLayout isAuthenticated={isAuthenticated} />}>
+            <Route element={<MainLayout isAuthenticated={isAuthenticated} />}>
                 <Route path="/" element={<Dashboard />} />
                 <Route path="/users" element={<User />} />
                 <Route path="/add-user" element={<AddUser />} />
