@@ -1,25 +1,28 @@
+# Use more common Node.js tag
 FROM node:18-alpine as build
 
 WORKDIR /app
 
 COPY package*.json ./
 
-RUN npm install
+# Add retry logic for npm install
+RUN npm config set fetch-retry-mintimeout 20000 && \
+    npm config set fetch-retry-maxtimeout 120000 && \
+    npm install --no-optional --retry 3
 
 COPY . .
 
 RUN npm run build
 
-# 生产环境
+# Use standard nginx alpine tag
 FROM nginx:alpine
 
-# 复制构建文件到nginx
-COPY --from=build /app/dist /usr/share/nginx/html
+# Create nginx.conf if it doesn't exist
+RUN mkdir -p /etc/nginx/conf.d && \
+    touch /etc/nginx/conf.d/default.conf
 
-# 复制nginx配置
+COPY --from=build /app/dist /usr/share/nginx/html
 COPY nginx.conf /etc/nginx/conf.d/default.conf
 
-# 暴露端口
 EXPOSE 80
-
 CMD ["nginx", "-g", "daemon off;"]
