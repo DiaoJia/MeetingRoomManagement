@@ -1,3 +1,9 @@
+python 虚拟环境
+python -m venv venv
+
+激活虚拟环境
+.\venv\Scripts\activate
+
 安装所有依赖的包
 pip install -r requirements.txt
 
@@ -16,7 +22,7 @@ pip uninstall -r requirements.txt -y && pip install -r requirements.txt && pip f
 运行应用
 uvicorn app.main:app --reload
 
-Swagger UI
+Swagger 
 http://127.0.0.1:8000/docs
 Redoc
 http://127.0.0.1:8000/redoc
