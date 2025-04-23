@@ -26,3 +26,7 @@ Swagger
 http://127.0.0.1:8000/docs
 Redoc
 http://127.0.0.1:8000/redoc
+
+
+docker build -t meetingroom-backend .
+docker run -d -p 8000:8000 --name meetingroom-backend meetingroom-backend

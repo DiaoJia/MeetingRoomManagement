@@ -6,9 +6,7 @@ WORKDIR /app
 COPY package*.json ./
 
 # Add retry logic for npm install
-RUN npm config set fetch-retry-mintimeout 20000 && \
-    npm config set fetch-retry-maxtimeout 120000 && \
-    npm install --no-optional --retry 3
+RUN npm install
 
 COPY . .
 

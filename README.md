@@ -25,4 +25,6 @@ Docker Compose:
 
 常见问题:
 1. 如果拉取 Docker 镜像失败，尝试使用更稳定的基础镜像版本
+   docker pull python:3.12-slim
+   docker pull nginx:alpine
 2. 确保 .env 文件中包含了正确的环境变量配置
