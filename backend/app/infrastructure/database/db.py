@@ -1,7 +1,10 @@
 from motor.motor_asyncio import AsyncIOMotorClient
+from .config import db_settings
 
-MONGO_URI = "mongodb://localhost:27017"
-MONGO_DB = "MRMS"
-
-client = AsyncIOMotorClient(MONGO_URI)
-db = client[MONGO_DB]
+client = AsyncIOMotorClient(
+    db_settings.MONGO_URI,
+    minPoolSize=db_settings.MIN_POOL_SIZE,
+    maxPoolSize=db_settings.MAX_POOL_SIZE,
+    maxIdleTimeMS=db_settings.MAX_IDLE_TIME_MS
+)
+db = client[db_settings.MONGO_DB]
